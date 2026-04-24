@@ -70,8 +70,10 @@ def triplet_sum_brute2(nums: list[int]) -> list[list[int]]:
 # time complexity:
 # 1. sorting is 0(nlog(n))
 # 2. loop is 0(n^2) in worst case scenario
-# 3. assuming the paired_sums found are <<  n, then the overall complexity id 0(nlog(n)) + 0(n^2) = 0(n^2)
-# 4. 
+# 3. the overall pairs found across the whole algorithm is of the order 0(n^2), then the overall complexity id 0(nlog(n)) + 0(n^2)  + 0(n^2)= 0(n^2)
+
+# space complexity:
+# 1. O(n) due to the sorging space used by the algorithm 
 def triplet_sum(nums: list[int]) -> list[list[int]]: 
     triplets = list()
     n: int = len(nums)
