@@ -57,15 +57,15 @@ def paired_sum_sorted_all_pairs(nums: list[int], target: int, start: int) -> lis
 			# if a target is found, make sure next value on left pointer is unique to avoid
 			# duplicate [a, b] pairs
 			while left < right and nums[left] == nums[left -1]:
-				left =+ 1
+				left += 1
 		elif sum < target:
 			left += 1
 		else: 
 			right -= 1
 	return []
 	
-nums = [1, 1, 1]
-target = 2	
-print(
-    f"{(paired_sum_sorted_brute(input_list=nums, target_num=target))}",
-)
+# nums = [1, 1, 1]
+# target = 2	
+# print(
+#     f"{(paired_sum_sorted_brute(input_list=nums, target_num=target))}",
+# )
