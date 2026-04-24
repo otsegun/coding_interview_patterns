@@ -80,8 +80,13 @@ def triplet_sum(nums: list[int]) -> list[list[int]]:
     nums.sort()
 
     for i in range(n):
+        # Positive triplets can't sum to zero. If nums[i] > 0, then nums[j] > 0 for j > i due to ascending order sorting. 
+        if nums[i] > 0:
+            break
+        # avoid duplicate triplets, skip nums[i] if it is the same as the previous number.
         if (i > 0) and (nums[i] == nums[i-1]):
             continue
+
         target = -nums[i]
         paired_sums = paired_sum_sorted_all_pairs(nums, target= target, start=i+1)
         if paired_sums:
@@ -96,5 +101,11 @@ def triplet_sum(nums: list[int]) -> list[list[int]]:
 
 
 input_nums = [0, -1, 2, -3, 1]
-# input_nums: 
+input_nums =  []
+input_nums = [0]
+input_nums = [1, -1]
+input_nums = [0, 0, 0]
+input_nums = [1, 0, 1]
+input_nums = [0, 0, 1, -1, 1, -1]
+
 print(f"Answer is {triplet_sum(input_nums)}")
